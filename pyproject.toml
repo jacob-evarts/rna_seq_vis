@@ -4,13 +4,13 @@ requires = [
     "flit_core >=3.4,<4",
     "setuptools_scm",
     "tomli",
-    "importlib_metadata>=0.7; python_version < '3.8'",
+    "importlib_metadata>=0.7; python_version <= '3.8'",
 ]
 
 [project]
-name = "scanpy"
-description = "Single-Cell Analysis in Python."
-requires-python = ">=3.7"
+name = "scanpypd"
+description = "Single-Cell Analysis in Python Compatible with Pandas DataFrames."
+requires-python = ">=3.8"
 license = {file = "LICENSE"}
 authors = [
     {name = "Alex Wolf"},
@@ -71,7 +71,7 @@ dependencies = [
     "packaging",
     "session-info",
     # for getting the stable version
-    "importlib_metadata>=0.7; python_version < '3.8'",
+    "importlib_metadata>=0.7; python_version <= '3.8'",
 ]
 dynamic = ["version"]
 
@@ -80,8 +80,6 @@ Documentation = "https://scanpy.readthedocs.io/"
 Source = "https://github.com/scverse/scanpy"
 Home-page = "https://scanpy.org"
 
-[project.scripts]
-scanpy = "scanpy.cli:console_main"
 
 [project.optional-dependencies]
 test-min = [
@@ -155,8 +153,8 @@ source = ["scanpy"]
 omit = ["*/tests/*"]
 
 [tool.black]
-line-length = 88
-target-version = ["py37"]
+line-length = 100
+target-version = ["py38"]
 skip-string-normalization = true
 exclude = """
 /build/.*
